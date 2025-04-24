@@ -1,10 +1,18 @@
-import React from 'react';
+import React from "react";
 
 function VideoPlayer({ videoRef, videoUrl, onEvents }) {
-  const { onLoadedMetadata, onPlay, onPause, onSeeking, onTimeUpdate, onEnded } = onEvents;
-  
+  const {
+    onLoadedMetadata,
+    onPlay,
+    onPause,
+    onSeeking,
+    onSeeked,
+    onTimeUpdate,
+    onEnded,
+  } = onEvents;
+
   return (
-    <video 
+    <video
       ref={videoRef}
       className="video-player"
       controls
@@ -12,6 +20,7 @@ function VideoPlayer({ videoRef, videoUrl, onEvents }) {
       onPlay={onPlay}
       onPause={onPause}
       onSeeking={onSeeking}
+      onSeeked={onSeeked} 
       onTimeUpdate={onTimeUpdate}
       onEnded={onEnded}
     >
